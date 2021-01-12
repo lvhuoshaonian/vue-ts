@@ -4,9 +4,10 @@ import {
   RouteRecordRaw
 } from 'vue-router'
 
+import Layout from '@/views/Layout/index.vue'
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/',
+    path: '/login',
     name: 'Login',
     component: () => import('@/views/Login/login.vue')
   },
@@ -16,11 +17,26 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('@/views/Home/index.vue')
   },
   {
-    path: '/layout',
+    path: '/',
     name: 'Layout',
-    component: () => import('@/views/Layout/index.vue')
+    component: Layout
+  },
+  /* 相关下载*/
+  {
+    path: '/download',
+    component: Layout,
+    redirect: '/download/index',
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/Download/index.vue'),
+        meta: { title: '相关下载', icon: 'download' }
+      }
+    ]
   }
 ]
+
+
 
 const router = createRouter({
   history: createWebHashHistory(),
