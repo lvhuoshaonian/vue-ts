@@ -13,14 +13,17 @@ export default defineComponent({
     className: String
   },
   setup(props) {
+
+    // 添加的svg-icon图标的class名
     const svgClass = computed(() => {
       if(props.className) {
-        return `vg-icon ${props.className}`
+        return `svg-icon ${props.className}`
       } else {
         return 'svg-icon'
       }
     })
 
+    // svgicon的图标名称
     const iconName = computed(() => `#icon-${props.iconClass}`)
 
     return {
@@ -35,7 +38,7 @@ export default defineComponent({
 .svg-icon {
   width: 1em;
   height: 1em;
-  vertical-align: -0.15em;
+  // vertical-align: -0.15em;
   fill: currentColor;
   overflow: hidden;
 }

@@ -1,13 +1,13 @@
 <template>
   <div>
-    相关下载
+    登陆日志
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 export default defineComponent({
-  name: 'Download',
+  name: 'LoginLog',
   setup() {
 
   }

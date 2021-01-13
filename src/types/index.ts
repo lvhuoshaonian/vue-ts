@@ -30,3 +30,13 @@ export interface RulesType {
   validator?: (rule: any, value: any, callback: () => void) => Promise<void>;
   whitespace?: boolean;
 }
+
+/**
+ * 菜单参数类型
+ */
+export interface MenuItem {
+  domEvent: MouseEvent;
+  key: string;
+  item: object;
+  keyPath: string[]
+}

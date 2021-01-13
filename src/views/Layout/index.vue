@@ -1,15 +1,27 @@
 <template>
   <a-layout id="components-layout-demo-custom-trigger">
-    <a-layout-sider v-model:collapsed="collapsed" :trigger="null" collapsible>
+    <a-layout-sider
+      v-model:collapsed="collapsed"
+      :trigger="null"
+      collapsible
+    >
       <div class="logo" />
       <Sidebar :collapsed="collapsed"/>
     </a-layout-sider>
     <a-layout>
       <a-layout-header style="background: #fff; padding: 0">
-        <Header :toggleCollapsed="toggleCollapsed" :collapsed="collapsed"/>
+        <Header
+          :toggleCollapsed="toggleCollapsed"
+          :collapsed="collapsed"
+        />
       </a-layout-header>
       <a-layout-content
-        :style="{ margin: '24px 16px', padding: '24px', background: '#fff', minHeight: '280px' }"
+        :style="{
+          margin: '24px 16px',
+          padding: '24px',
+          background: '#fff',
+          minHeight: '280px'
+        }"
       >
         <AppMain />
       </a-layout-content>
@@ -20,7 +32,7 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 import Header from '@/views/Layout/components/Header.vue'
-import Sidebar from '@/views/Layout/components/Sidebar.vue'
+import Sidebar from './components/Sidebar/index.vue'
 import AppMain from '@/views/Layout/components/AppMain.vue'
 
 export default defineComponent({

@@ -1,13 +1,13 @@
 <template>
   <div>
-    相关下载
+    商户管理
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 export default defineComponent({
-  name: 'Download',
+  name: 'MerchantDown',
   setup() {
 
   }
