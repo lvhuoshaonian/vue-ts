@@ -1,5 +1,8 @@
 <template>
   <div class="login">
+    <div class="bg-img">
+      <img src="../../assets/bg.jpg" alt="">
+    </div>
     <div class="login-form">
       <h2 class="login-title">管理系统</h2>
       <a-form
@@ -61,6 +64,8 @@ import {
 } from 'vue'
 import { UserOutlined, LockOutlined } from '@ant-design/icons-vue'
 import { UserInfo, RulesUserInfo } from '@/types'
+import { setToken } from '@/utils/user'
+import { useRouter } from 'vue-router'
 
 export default defineComponent({
   name: 'Login',
@@ -69,7 +74,7 @@ export default defineComponent({
     LockOutlined,
   },
   setup() {
-    const { ctx } = getCurrentInstance() as any
+    const { push } = useRouter()
     const form = reactive<UserInfo>({
       username: '',
       password: ''
@@ -110,7 +115,8 @@ export default defineComponent({
 
     function onLogin() {
       if (form.username ==='admin' && form.password === '123456') {
-        ctx.$router.push('/home/' + 'admin')
+        push('/')
+        setToken('admin')
       }
     }
 
@@ -129,7 +135,20 @@ export default defineComponent({
     align-items: center;
     justify-content: center;
     height: 100%;
-    background-color: #EAF4FE;
+
+    .bg-img {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
 
     .login-form {
       width: 450px;
@@ -137,8 +156,8 @@ export default defineComponent({
       padding: 15px 15px 30px;
       background-color: rgba($color: #D5EAFE, $alpha: .7);
       border-radius: 6px;
-      box-shadow: 0 0 3px #D5EAFE;
-      border: 1px solid #D5EAFE;
+      box-shadow: 0 0 3px #ccc;
+      border: 1px solid #ccc;
 
       .login-title {
         font-weight: 700;

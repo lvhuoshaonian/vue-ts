@@ -5,7 +5,10 @@
       :trigger="null"
       collapsible
     >
-      <div class="logo" />
+      <div class="logo"> 
+        <img src="../../assets/logo.png" alt="">
+        <span v-if="!collapsed" class="logo-title">Vue3.xAntAdmin</span>
+      </div>
       <Sidebar :collapsed="collapsed"/>
     </a-layout-sider>
     <a-layout>
@@ -18,7 +21,6 @@
       <a-layout-content
         :style="{
           margin: '24px 16px',
-          padding: '24px',
           background: '#fff',
           minHeight: '280px'
         }"
@@ -45,7 +47,7 @@ export default defineComponent({
   setup() {
     const collapsed = ref(false)
     const toggleCollapsed = () => {
-      collapsed.value = ! collapsed.value
+      collapsed.value = !collapsed.value
     }
 
     return {
@@ -58,7 +60,7 @@ export default defineComponent({
 
 <style lang="scss">
   #components-layout-demo-custom-trigger {
-    height: 100%;
+    min-height: 100%;
     .trigger {
       font-size: 18px;
       line-height: 64px;
@@ -72,9 +74,23 @@ export default defineComponent({
     }
 
     .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       height: 32px;
       background: rgba(255, 255, 255, 0.2);
       margin: 16px;
+
+      img {
+        height: 80%;
+      }
+
+      .logo-title {
+        display: inline-block;
+        margin-left: 8px;
+        font-size: 15px;
+        color: #fff;
+      }
     }
   }
 

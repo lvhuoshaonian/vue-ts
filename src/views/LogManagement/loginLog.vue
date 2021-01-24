@@ -1,6 +1,7 @@
 <template>
   <div>
     登陆日志
+    <router-view />
   </div>
 </template>
 

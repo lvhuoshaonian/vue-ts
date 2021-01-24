@@ -9,3 +9,8 @@ declare module 'path' {
   import path from 'path'
   export default path
 }
+
+declare module 'echarts' {
+  import echarts from 'echarts'
+  export default echarts
+}

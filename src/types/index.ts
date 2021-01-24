@@ -40,3 +40,9 @@ export interface MenuItem {
   item: object;
   keyPath: string[]
 }
+
+export interface MenuKeys {
+  selectedKeys: string[],
+  openKeys: string[],
+}
+
