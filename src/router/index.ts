@@ -110,7 +110,7 @@ const routes: Array<RouteRecordRaw> = [
       }
     ]
   },
-  /* 相关下载*/
+  /* Icon图标*/
   {
     path: '/icon',
     name: 'Icon',

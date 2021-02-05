@@ -7,24 +7,18 @@
     >
       <div class="logo"> 
         <img src="../../assets/logo.png" alt="">
-        <span v-if="!collapsed" class="logo-title">Vue3.xAntAdmin</span>
+        <span v-if="!collapsed" class="logo-title">Vue Ant Admin</span>
       </div>
-      <Sidebar :collapsed="collapsed"/>
+      <Sidebar :collapsed="collapsed"/>  
     </a-layout-sider>
-    <a-layout>
+    <a-layout :class="[collapsed ? 'iscollapsed' : '', 'layout-content', 'beauty-scroll']">
       <a-layout-header style="background: #fff; padding: 0">
         <Header
           :toggleCollapsed="toggleCollapsed"
           :collapsed="collapsed"
         />
       </a-layout-header>
-      <a-layout-content
-        :style="{
-          margin: '24px 16px',
-          background: '#fff',
-          minHeight: '280px'
-        }"
-      >
+      <a-layout-content style="padding: 20px 20px 0;">
         <AppMain />
       </a-layout-content>
     </a-layout>
@@ -52,7 +46,7 @@ export default defineComponent({
 
     return {
       collapsed,
-      toggleCollapsed
+      toggleCollapsed,
     }
   }
 })
@@ -61,6 +55,14 @@ export default defineComponent({
 <style lang="scss">
   #components-layout-demo-custom-trigger {
     min-height: 100%;
+
+    .layout-content {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow-y: overlay;
+    }
+
     .trigger {
       font-size: 18px;
       line-height: 64px;

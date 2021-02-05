@@ -41,6 +41,7 @@ export default defineComponent({
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     //表示列宽不小于120px，不大于1fr
+    background-color: #fff;
 
     .icon-item {
       display: flex;

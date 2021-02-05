@@ -63,7 +63,7 @@ import {
   getCurrentInstance
 } from 'vue'
 import { UserOutlined, LockOutlined } from '@ant-design/icons-vue'
-import { UserInfo, RulesUserInfo } from '@/types'
+import { UserInfo, RulesUserInfo, RulesType } from '@/types'
 import { setToken } from '@/utils/user'
 import { useRouter } from 'vue-router'
 
@@ -81,7 +81,7 @@ export default defineComponent({
     })
 
     // 密码输入验证
-    const checkAge = async (rule: any, value: any, callback: () => void) => {
+    const checkAge = async (rule: RulesType, value: string, callback: () => void) => {
       if (value.length < 6) {
         return Promise.reject('长度不能小于6')
       } else if(value.length > 20) {

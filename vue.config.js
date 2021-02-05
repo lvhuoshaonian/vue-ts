@@ -1,4 +1,8 @@
 module.exports = {
+  devServer: {
+    port: 9520,
+    open: true // 启动时自动打开浏览器
+  },
   css: {
     loaderOptions: {
       // 默认情况下 `sass` 选项会同时对 `sass` 和 `scss` 语法同时生效

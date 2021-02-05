@@ -21,6 +21,10 @@
     //   "never"
     // ],
     "semicolon": false,
-    "array-type": false
+    "array-type": false,
+    "variable-name": [
+      true,
+      "allow-snake-case"
+    ]
   }
 }

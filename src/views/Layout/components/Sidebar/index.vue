@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="sidebar beauty-scroll">
     <a-menu
       v-model:openKeys="openKeys"
       v-model:selectedKeys="selectedKeys"
@@ -20,24 +20,19 @@
 
 <script lang="ts">
 import {
-  computed,
   defineComponent,
   reactive,
-  ref,
   toRefs,
   watchEffect
 } from 'vue'
 import {
-  RouteRecordRaw,
   useRouter,
   useRoute,
   RouteLocationNormalizedLoaded
 } from 'vue-router'
 import { MenuItem, MenuKeys } from '@/types'
-import { localSave, localGet } from '@/utils'
 import Item from './item.vue'
 import SidebarItem from './SidebarItem.vue'
-import { ColSize } from 'ant-design-vue/lib/grid/Col'
 import path from 'path'
 
 export default defineComponent({
@@ -94,3 +89,13 @@ export default defineComponent({
   }
 })
 </script>
+
+<style lang="scss" scoped>
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 64px);
+  // overflow: auto;
+  overflow-y: overlay;
+}
+</style>
